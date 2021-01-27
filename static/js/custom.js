@@ -65,7 +65,6 @@ function populateResults(result){
     //Object.keys(result).forEach(function(key,value){
     Object.entries(result).forEach(entry => {
         const [key, value] = entry;
-        console.log("Key: ", key, " Value: ", value)
         var contents= value.item.contents;
         var snippet = "";
         var snippetHighlights=[];
@@ -92,21 +91,8 @@ function populateResults(result){
           //pull template from hugo template definition
           var templateDefinition = u('#search-result-template').html();
           //replace values
-          console.log("VALUE: ", value.item.imageLink)
           var output = render(templateDefinition,{key:key,title:value.item.title,link:value.item.permalink,tags:value.item.tags,categories:value.item.categories,snippet:snippet,image:value.item.imageLink});
           u('#searchResultsCol').append(output);
-      
-        //   Object.entries(snippetHighlights).forEach(entry => {
-        //     const [snipkey, snipvalue] = entry
-        //     console.log("SNIPVALUE: ", snipvalue)
-           
-        //     var html = u("#summary-"+key).html()
-        //      console.log("Rsult: ", html) 
-        //      newHTML = html.replace(new RegExp( snipvalue, 'gi'), `<mark>` + snipvalue.toUpperCase() +`</mark>`)
-        //      u("#summary-"+key).html(newHTML)
-
-        //   });
-
     })
 }
 

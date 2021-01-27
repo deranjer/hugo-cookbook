@@ -3,10 +3,10 @@
 
 name = "Cookbook"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+licenselink = "https://github.com/deranjer/hugo-cookbook/blob/master/LICENSE"
 description = "Cookbook is a theme that stores all of your recipes and displays them in a viewable format on desktop and mobile."
-homepage = "http://example.com/"
-tags = []
+homepage = "https://github.com/deranjer/hugo-cookbook/"
+tags = ["recipes", "cookbook", "cooking", "bulma", "responsive"]
 features = []
 min_version = "0.41.0"
 

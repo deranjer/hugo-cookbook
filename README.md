@@ -6,7 +6,7 @@ Cookbook is a theme for hugo that stores all of your recipes and displays them i
 
 Developed with Bulma CSS and UmbrellaJS (as well as fuse.js for search).
 
-![Cookbook Homepage](images/home_page.png)
+![Cookbook Homepage](images/screenshot.png)
 
 ## Features
 
@@ -24,6 +24,10 @@ Developed with Bulma CSS and UmbrellaJS (as well as fuse.js for search).
 
 ## Install
 
+First create your site: `hugo new site <site_name>`
+
+Then move into the directory: `cd <site_name>`
+
 You can install using hugo's recommended theme install method while in your hugo site directory:
 
 `git init`
@@ -34,13 +38,13 @@ OR
 
 You can download the latest release, or the the current master as a zip, then extract the zip file into the themes directory.
 
+## Copy Site Config
+
 Then you can copy the `config.toml` from `exampleSite` to the root of your hugo directory, and modify that for your instance.
 
 ## Setup Default Template
 
 Since hugo-cookbook is a single purpose theme, you need to override your default archetype so that all content created is of `recipe` type.
-
-### Override Default
 
 To override the default template, copy the `default.md` from `themes\archetypes\default.md` to `archetypes` and overwrite the current `default.md` in that directory.
 
@@ -54,8 +58,8 @@ Simply run `hugo new recipe_name.md` to create your new recipe in the `content` 
 
 ## Recipe Views of the Site
 
-![Ramen Recipe](images/recipe-1.png)
+![Ramen Recipe](images/tn.png)
 
 ## Directions View
 
-![Direction View](images/recipe-2.png)
+![Direction View](images/tn2.png)
