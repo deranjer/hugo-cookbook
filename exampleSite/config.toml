@@ -20,6 +20,9 @@ fileName = "images/logo.webp"
 height =  50
 width = 200
 
+[params.favicon]
+fileName = "images/favicon.svg" #your favicon here if you wish to change it.
+
 
 [menu]
   [[menu.main]]
