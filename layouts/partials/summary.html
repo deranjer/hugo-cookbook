@@ -1,0 +1,26 @@
+<div class="card" style="border-radius: 1%;">
+    <div class="card-image">
+        <figure class="image is-4by3">
+        <img style="border-radius: 3%;" src="{{ $.Params.Recipe_image }}" alt="Placeholder image">
+        </figure>
+    </div>
+    <div class="card-content">
+        <div class="media-content">
+            <p class="title is-4 has-text-centered">{{ $.Title }}</p>
+            <p class="subtitle is-6 "><em>{{ $.Params.Author }}</em></p>
+        </div>
+        <div class="content">
+            <p class="is-small">{{ $.Params.Tagline }}</p>
+            <br>
+                <i class="fas fa-tags pr-2"></i>
+                {{ range $index, $element := $.Params.Tags }}
+               <a href="#">{{$element}}</a>
+                {{ end }}
+            <br>
+            <i class="fas fa-calendar pr-4"></i>{{ .Date.Format "January 2006" }}
+        </div>
+        <div class="card-footer">
+            <a href="{{ .Permalink }}" class="card-footer-item button is-primary">View Recipe</a>
+        </div>
+    </div>
+</div>

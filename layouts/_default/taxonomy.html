@@ -1,0 +1,36 @@
+{{ define "main" }}
+<div class="section">
+     <div class="columns is-multiline">
+        {{ range $key, $value := .Pages.ByPublishDate.Reverse }}
+        <div class="column is-one-quarter">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                    <img style="border-radius: 3%;" src="/{{ $value.Params.recipe_image }}" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media-content">
+                        <p class="title is-4 has-text-centered">{{ $value.Params.Title }}</p>
+                        <p class="subtitle is-6 "><em>{{ $value.Params.Author }}</em></p>
+                    </div>
+                    <div class="content">
+                        <p class="is-small">{{ $value.Params.Tagline }}</p>
+                        <br>
+                            <i class="fas fa-tags pr-2"></i>
+                            {{ range $index, $element := $value.Params.Tags }}
+                        <a href="/tags/{{$element}}">{{$element}}</a>
+                            {{ end }}
+                        <br>
+                        <i class="fas fa-calendar pr-4"></i>{{ .Date.Format "January 2006" }}
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{ .Permalink }}" class="card-footer-item button is-primary">View Recipe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="section">
+    <div class="columns is-centered">
+        <div class="column is-full-mobile is-half-desktop" style="border-radius: 1%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+            <div class="is-flex" style="justify-content: center; border-radius: 3%; background-color: #f0f5f1; position: relative;">
+                <figure class="image"> 
+                    <img style="border-radius: 3%; width: {{.Params.Image_width}}px; height: {{.Params.Image_height}}px" src={{ printf "%s%s" .Site.BaseURL .Params.Recipe_image }} alt="Placeholder image">
+                </figure>
+                <div id="printButton" style="position: absolute; bottom: 0; right: 0;" class="is-rounded">
+                    <a href="/print/{{ urlize .File.BaseFileName }}/print.html" target="_blank"><i class="fas fa-print fa-3x"></i></a>
+                </div>
+            </div>
+            
+            <div class="container has-text-centered">
+                <h1 class="title is-bold"> {{ .Title }}</h1>
+                <p class="subtitle is-italic"> {{ .Params.Author }}</p>
+                <div class="container has-text-right">
+                    {{ partial "metadata.html" . }}
+                </div>
+                <hr>
+            </div>
+            <div class="container has-text-centered">    
+                {{ partial "statstable.html" . }}
+            </div>
+            <hr>
+            <p class="subtitle is-italic"> {{ .Params.Tagline }}</p>
+            <div class="content">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

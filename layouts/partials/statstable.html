@@ -1,0 +1,38 @@
+<div class="columns is-mobile is-multiline">
+    <div class="column is-half-mobile" style="border-right: 1px solid #dbdbdb">
+        <i class="fas fa-concierge-bell fa-lg"></i>
+        <div></div>
+        <p class="has-text-weight-bold is-size-6">Servings</p>
+        <div></div>
+        {{ .Params.Servings | default "---"}} Servings
+    </div>
+    <div class="column is-half-mobile" style="border-right: 1px solid #dbdbdb">
+        <i class="fas fa-hourglass-half fa-lg"></i>
+        <div></div>
+        <p class="has-text-weight-bold is-size-6">Prep time</p>
+        <div></div>
+        {{ .Params.Prep_time | default "---"}} Minutes
+    </div>
+    <div class="column is-half-mobile" style="border-right: 1px solid #dbdbdb">
+        <i class="fas fa-temperature-high fa-lg"></i>
+        <div></div>
+        {{ if .Params.Cook }}
+            <p class="has-text-weight-bold is-size-6">Cooking Time</p>
+        {{ else }}
+            <p class="has-text-weight-bold is-size-6">Cooling Time</p>
+        {{ end }}
+        <div></div>
+        {{ if eq .Params.Cook_increment "hours" }}
+            {{ .Params.Cook_time | default "---"}} Hours
+        {{ else }}
+            {{ .Params.Cook_time | default "---"}} Minutes
+        {{ end }}
+    </div>
+    <div class="column is-half-mobile">
+        <i class="fas fa-fire fa-lg"></i>
+        <div></div>
+        <p class="has-text-weight-bold is-size-6">Calories</p>
+        <div></div>
+        {{ .Params.Calories | default "---" }} Kcal
+    </div>     
+</div>

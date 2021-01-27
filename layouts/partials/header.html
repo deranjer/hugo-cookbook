@@ -1,0 +1,42 @@
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-brand">
+            {{ with .Site.Params.logo }}
+                <img src="{{ .fileName | absURL }}" width="{{ .width }}" height="{{ .height }}">
+            {{ else }}
+                <h1 style="font-size:300%"><em>{{ .Site.Params.navText.text }}</em></h1>
+            {{ end }}
+        </a>
+        <a id="navBarButton" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div id="navBarMenu" class="navbar-menu">
+        <div class="navbar-start">
+            {{ range .Site.Menus.main }}
+            <a class="navbar-item" href="{{- .URL -}}">
+            {{ if .Pre }}
+            {{ $icon := printf "<i class=\"%s pr-2\"></i> " .Pre | safeHTML }}
+            {{- $icon -}}
+            {{ end }}
+            {{ $text := print .Name | safeHTML }}
+            {{- $text -}}
+            </a>
+            {{ end }}
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <form class="field has-addons">
+                    <div class="control">
+                        <input class="input" id="searchTerm" type="text" value="" placeholder="Search Term...">
+                    </div>
+                    <div class="control">
+                        <button id="searchButton" class="button is-secondary">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</nav>

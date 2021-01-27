@@ -1,0 +1,7 @@
+{{ with .Params.tags }}
+<i class="fas fa-tags"></i>
+{{ range . }}
+{{/* {{ $href := print (absURL "tags/") (urlize .) }} */}}
+{{ . }}
+{{ end }}
+{{ end }}

@@ -1,0 +1,53 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My Cookbook"
+theme = "cookbook"
+sectionPagesMenu = "main"
+
+[params.front]
+defaultAuthor = "Jared Swets" #Put in the default name of the author of the recipe
+defaultImage = "images/defaultImage.jpg" #default image that will be used for a recipe with no image
+defaultImageHeight = 512 #default recipe image height
+defaultImageWidth = 512 # default recipe image width
+
+
+# If you have a logo image, add it here, else just text (as an image) will be added
+# The default height/width are the recommended bulma size (112W X 28H), best to get your logo as close as possible to that
+# The site will SCALE your image, but will not force a stretch, so you may need to stretch it in external tool before using.
+[params.logo]
+fileName = "images/logo.webp"
+#fileName = "images/logo-alt.png" #alt logo if you are interested
+height =  50
+width = 200
+
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pre = "fas fa-home" #icon, change if you would prefer a different icon
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Categories" # change to w/e you want, tags or categories works best
+    pre = "fas fa-tags" #icon, change if you would prefer a different icon
+    url = "/tags/"
+    weight = 2
+
+
+# Print output just creates a special route for a print view
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "PRINT"]
+  
+# The settings for the print format
+[outputFormats]
+[outputFormats.printFormat]
+  name = "print"
+  mediaType = "text/html"
+  baseName = "print"
+  isPlainText = false
+  rel = "print"
+  isHTML = true
+  noUgly = true
+  permalinkable = true
+  path = "print"

@@ -1,0 +1,38 @@
+<div class="columns">
+    <div class="column" style="border-right: 1px solid #dbdbdb; padding: 0px;">
+        <i class="fas fa-concierge-bell"></i>
+        <div></div>
+        <p class="has-text-weight-bold">Servings</p>
+        <div></div>
+        {{ .Params.Servings | default "---"}} Servings
+    </div>
+    <div class="column" style="border-right: 1px solid #dbdbdb; padding: 0px;">
+        <i class="fas fa-hourglass-half"></i>
+        <div></div>
+        <p class="has-text-weight-bold">Prep time</p>
+        <div></div>
+        {{ .Params.Prep_time | default "---"}} Minutes
+    </div>
+    <div class="column" style="border-right: 1px solid #dbdbdb; padding: 0px;">
+        <i class="fas fa-temperature-high"></i>
+        <div></div>
+        {{ if .Params.Cook }}
+            <p class="has-text-weight-bold is-size-6">Cooking Time</p>
+        {{ else }}
+            <p class="has-text-weight-bold is-size-6">Cooling Time</p>
+        {{ end }}
+        <div></div>
+        {{ if eq .Params.Cook_increment "hours" }}
+            {{ .Params.Cook_time | default "---"}} Hours
+        {{ else }}
+            {{ .Params.Cook_time | default "---"}} Minutes
+        {{ end }}
+    </div>
+    <div class="column" style="padding: 0px;">
+        <i class="fas fa-fire"></i>
+        <div></div>
+        <p class="has-text-weight-bold">Calories</p>
+        <div></div>
+        {{ .Params.Calories | default "---" }} Kcal
+    </div>     
+</div>

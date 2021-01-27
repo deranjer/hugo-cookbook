@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+{{- partial "printhead.html" . -}}
+<body>
+    <div class="section">
+        <div class="columns is-centered">
+            <div class="column is-full-mobile is-half-desktop" style="border-radius: 1%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
+                <div class="container">
+                   
+                    <div class="columns">
+                        <div class="column is-half">
+                            <h1 id="mainTitle" class="title is-bold"> {{ .Title }} </h1>
+                            <p class="subtitle is-italic" style="margin-bottom: .5em;"> {{ .Params.Author }}</p>  
+                            {{ partial "printmetadata.html" . }}
+                            <p class="subtitle is-italic" style="margin-top: .5em;"> {{ .Params.Tagline }}</p>
+                        </div>
+                        <div class="column is-half">
+                            <div class="is-pulled-right">
+                                <figure class="image"> 
+                                    <img style="border-radius: 3%; width: 128px; height: 128px" src={{ printf "%s%s" .Site.BaseURL .Params.Recipe_image }} alt="Placeholder image">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin-top: .5em; margin-bottom: 1em;">
+                <div class="container has-text-centered">    
+                    {{ partial "printstatstable.html" . }}
+                </div>
+                <hr style="margin-top: 1em; margin-bottom: .5em;">
+                <div class="content">
+                    {{ .Content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{{ partial "printscript.html" }}
+</html>
