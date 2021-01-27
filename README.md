@@ -46,4 +46,6 @@ Simply run `hugo new recipe_name.md` to create your new recipe in the `content` 
 
 ![Ramen Recipe](images/recipe-1.png)
 
+## Directions View
+
 ![Direction View](images/recipe-2.png)
