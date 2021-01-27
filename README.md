@@ -36,6 +36,16 @@ You can download the latest release, or the the current master as a zip, then ex
 
 Then you can copy the `config.toml` from `exampleSite` to the root of your hugo directory, and modify that for your instance.
 
+## Setup Default Template
+
+Since hugo-cookbook is a single purpose theme, you need to override your default archetype so that all content created is of `recipe` type.
+
+### Override Default
+
+To override the default template, copy the `default.md` from `themes\archetypes\default.md` to `archetypes` and overwrite the current `default.md` in that directory.
+
+This will ensure that any new content you create will be of type `recipe`.
+
 ## First Recipe
 
 Simply run `hugo new recipe_name.md` to create your new recipe in the `content` folder.  Modify the markdown file as required for your new recipe.
