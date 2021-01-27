@@ -42,3 +42,8 @@ Simply run `hugo new recipe_name.md` to create your new recipe in the `content` 
 
 `hugo serve` to view the site.
 
+## Recipe Views of the Site
+
+![Ramen Recipe](images/recipe-1.png)
+
+![Direction View](images/recipe-2.png)
