@@ -8,7 +8,7 @@ description = "Cookbook is a theme that stores all of your recipes and displays 
 homepage = "https://github.com/deranjer/hugo-cookbook/"
 tags = ["recipes", "cookbook", "cooking", "bulma", "responsive"]
 features = []
-min_version = "0.41.0"
+min_version = "0.72.0"
 
 [author]
   name = "Jared Swets"
