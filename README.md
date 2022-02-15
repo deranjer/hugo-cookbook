@@ -20,7 +20,7 @@ Developed with Bulma CSS and UmbrellaJS (as well as fuse.js for search).
 
 ## Planned
 
-- [ ] 404 page.
+- [x] 404 page.
 - [ ] More customizable print options, smaller font size for printing.
 - [ ] Any other layout tweaks/feature requests.
 
