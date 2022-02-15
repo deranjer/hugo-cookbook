@@ -1,0 +1,64 @@
+
+{{ define "main" }}
+<div class="section">
+    <div class="columns is-multiline">
+        {{ range .Pages.ByPublishDate.Reverse }}
+        {{ $.Scratch.Set "relLink" .RelPermalink }}
+        <div class="column is-one-quarter">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        <a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        <i class="fas fa-tags pl-3 pb-3"></i>
+                    </p>
+                    <div class="pt-4 pr-2">
+                        {{ $.Scratch.Set "category" .Title }}
+                        {{ range $name, $taxonomy := .Site.Taxonomies }}
+                            {{ range $key, $value := $taxonomy }}
+                                {{ if (eq $key ($.Scratch.Get "category")) }}
+                                    {{ $.Scratch.Set "count" (len $value) }}
+                                    {{ if (gt (len $value) 1 ) }}
+                                        {{ len $value }} Recipes Found
+                                    {{ else }}
+                                        1 Recipe Found
+                                    {{ end }}
+                                {{ end }}
+                            {{ end }}
+                        {{ end }}
+                    </div>
+                </header>
+                <div class="card-content">
+                    <div class="content">
+                        {{ $.Scratch.Set "category" .Title }}
+                        {{ range $name, $taxonomy := .Site.Taxonomies }}
+                            {{ range $key, $value := $taxonomy }}
+                                {{ if (eq $key ($.Scratch.Get "category")) }}
+                                    {{ range first 5 $value.Pages }}
+                                        <li><a href="{{ .Permalink}}"> {{ .LinkTitle }}</a></li>
+                                    {{ end }}
+                                    {{ if (gt (len $value) 5) }}
+                                        <a href={{ $.Scratch.Get "relLink" }}>See All</a>
+                                    {{ end }}
+                                   
+                                {{ end }}
+                            {{ end }}
+                        {{ end }}
+                        <a class="summary" href="{{ .RelPermalink }}">
+                            <p>{{ .Summary }}</p>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            {{/* <p>
+                <h3><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                {{ partial "metadata.html" . }}
+                <a class="summary" href="{{ .RelPermalink }}">
+                    <p>{{ .Summary }}</p>
+                </a>
+            </p> */}}
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
