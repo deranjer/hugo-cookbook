@@ -1,9 +1,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-    <link rel="stylesheet" type="text/css" href="/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="icon" type="image/svg+xml" href="{{ "/images/favicon.svg" | urlize | relURL}}">
+    <link rel="stylesheet" type="text/css" href="{{ "/css/bulma.min.css" | urlize | relURL}}">
+    <link rel="stylesheet" type="text/css" href="{{ "/css/custom.css" | urlize | relURL}}">
     <script src="https://kit.fontawesome.com/b7002cebe4.js" crossorigin="anonymous"></script>
     {{ $title := print .Site.Title " | " .Title }}
     {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
