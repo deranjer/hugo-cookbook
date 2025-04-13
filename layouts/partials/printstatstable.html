@@ -27,6 +27,12 @@
         {{ else }}
             {{ .Params.Cook_time | default "---"}} Minutes
         {{ end }}
+        <div></div>
+        {{ if eq .Params.Cook_temperature_unit "F" }}
+            {{ .Params.Cook_temperature_degrees  | default "---"}} &deg;F
+        {{ else }}
+            {{ .Params.Cook_temperature_degrees  | default "---"}} &deg;C
+        {{ end }}
     </div>
     <div class="column" style="padding: 0px;">
         <i class="fas fa-fire"></i>
