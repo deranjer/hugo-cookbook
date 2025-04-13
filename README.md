@@ -2,6 +2,10 @@
 
 [Demo Site](https://wonderful-raman-ea1990.netlify.app)
 
+## Updates
+
+This theme was updated, and the new minimum hugo version is `0.146.3`.
+
 ## About
 
 Cookbook is a theme for hugo that stores all of your recipes and displays them in a viewable format on desktop and mobile.
