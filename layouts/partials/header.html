@@ -2,7 +2,7 @@
     <div class="navbar-brand">
         <a class="navbar-brand">
             {{ with .Site.Params.logo }}
-                <img src="{{ .filename }}" width="{{ .width }}" height="{{ .height }}">
+                <img src="{{ .filename | urlize | relURL }}" width="{{ .width }}" height="{{ .height }}">
             {{ else }}
                 <h1 style="font-size:300%"><em>{{ .Site.Params.navText.text }}</em></h1>
             {{ end }}
